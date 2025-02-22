@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client";
 
 import { useState, useRef } from "react";
@@ -7,7 +9,7 @@ const CLOUD_NAME = "dbtv6upvc";
 const UPLOAD_PRESET = "HackTheChain";
 
 const Predict = () => {
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  // const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [prediction, setPrediction] = useState<any>(null);
   const [showWebcam, setShowWebcam] = useState<boolean>(false);
   const [chatMessages, setChatMessages] = useState<{ role: string; content: string }[]>([]);
@@ -40,7 +42,7 @@ const Predict = () => {
 
     const data = await response.json();
     if (data.secure_url) {
-      setImageUrl(data.secure_url);
+      // setImageUrl(data.secure_url);
       await sendToBackend(data.secure_url);
     }
     setLoading(false);
