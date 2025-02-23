@@ -50,7 +50,7 @@ const Predict = () => {
 
   const sendToBackend = async (url: string) => {
     setLoading(true);
-    const response = await fetch("https://1cc7-34-71-158-52.ngrok-free.app/analyze", {
+    const response = await fetch(" https://ff5a-35-194-188-130.ngrok-free.app/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ Type: "jpg", Url: url }),
@@ -64,7 +64,7 @@ const Predict = () => {
   const initializeChat = async (prediction: any) => {
     const initialPrompt = `Hey gemini , please remember the upcoming object as it is my personal report and i will ask u queries
     about that ${JSON.stringify(prediction)}`;
-    const response = await fetch("https://1cc7-34-71-158-52.ngrok-free.app/chat", {
+    const response = await fetch(" https://ff5a-35-194-188-130.ngrok-free.app/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: initialPrompt }),
@@ -79,7 +79,7 @@ const Predict = () => {
     setChatMessages(newMessages);
     setUserMessage("");
 
-    const response = await fetch("https://1cc7-34-71-158-52.ngrok-free.app/chat", {
+    const response = await fetch(" https://ff5a-35-194-188-130.ngrok-free.app/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: userMessage }),
